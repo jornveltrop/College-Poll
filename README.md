@@ -13,6 +13,7 @@
   - [Contributing](#contributing)
   - [License](#license)
 
+## [Opdracht 1&2](https://github.com/jornveltrop/Browser-tech-team1)
 
 ## [Live demo](https://college-poll.herokuapp.com/)
 
