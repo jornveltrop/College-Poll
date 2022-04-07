@@ -1,15 +1,5 @@
 # <img src="content/banner.jpg" width="100%" alt="banner">
 
-## Table of contents
-  - [Table of contents](#table-of-contents)
-  - [About](#about)
-  - [Features](#features)
-  - [Activity Diagram](#Activity-Diagram)
-  - [Installing](#installing)
-  - [Author](#author)
-  - [Contributing](#contributing)
-  - [License](#license)
-
 ## [Live demo](https://college-poll.herokuapp.com/)
 
 
