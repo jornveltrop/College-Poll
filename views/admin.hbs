@@ -1,0 +1,22 @@
+{{> headerAdmin  }}
+<main>
+    <form method="POST" action="/">
+        <h2>Admin</h2>
+
+        {{#each dataResults}}
+            <p>
+                <label for="vraag{{id}}">Vraag {{id}}</label>
+                <input type="text" name="vraag{{id}}" id="vraag{{id}}" placeholder="Stel vraag {{id}} in..." value="{{question}}">
+            </p>
+        {{/each}}
+
+        <p>
+            <button type="submit">Stel vragen in</button>
+        </p>
+    </form>
+    <form method="POST" action="/reset">
+        <p>
+            <button type="submit">Reset resultaten</button>
+        </p>
+    </form>
+</main>

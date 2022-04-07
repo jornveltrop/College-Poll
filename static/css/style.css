@@ -1,9 +1,297 @@
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/font/WorkSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/font/WorkSans-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/font/WorkSans-Bold.ttf');
+    font-weight: bold;
+}
+
 * { 
     box-sizing: border-box;
 }
 
+:focus {
+    outline-color: #FA8322;
+}
+
 html, body {
-    height: 100%;
-    width: 100%;
     margin: 0;
+
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: #f0f3f5;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: .02em;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: italic;
+}
+
+h4 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+header {
+    padding: 1.5em;
+    background: #185C90;
+    color: #fff;
+    border-radius: 0 0 1.5em 1.5em;
+}
+
+header nav {
+    margin-right: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+header nav a {
+    margin-right: .8em;
+    padding: .3em;
+    padding-bottom: .3em;
+    font-weight: 600;
+    margin-top: .5em;
+    display: inline-block;
+}
+
+header nav a:hover {
+    border-bottom: 3px solid #fff;
+}
+
+header nav a:active {
+    border-bottom: 3px solid #fff;
+}
+
+.active {
+    border-bottom: 3px solid #fff;
+}
+
+main {
+    display: block;
+    padding: 2em;
+}
+
+section {
+    margin: .8em 1em .8em 0;
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
+
+fieldset {
+    margin: .8em 1.8em .8em 0;
+    padding: 0;
+    width: auto;
+    display: inline-block;
+    border: none;
+}
+
+legend {
+    font-style: italic;
+    padding: 0;
+}
+
+input, label {
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type="text"] {
+    padding: .9em 1em;
+    margin-top: .4em;
+    margin-left: 0em;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: .7em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.127);
+}
+
+button {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1em;
+    padding: .8em 1.3em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    appearance: none;
+    border: none;
+    background: #185C90;
+    border-radius: .8em;
+    cursor: pointer;
+    transition: background .3s ease;
+}
+
+button:hover {
+    background: #0b3b5f;
+    transition: background .3s ease;
+}
+
+form:nth-of-type(2) button {
+    background: #9F3323;
+}
+
+form:nth-of-type(2) button:hover {
+    background: #6e2317;
+    transition: background .3s ease;
+}
+
+.slider nav {
+    display: none;
+}
+
+/* Progressive enhanchement */
+
+@supports (display: flex) {
+    /* SLIDER: https://codepen.io/alvarotrigo/pen/bGqgqeK?editors=1100 */
+    .jsEnabled form p.buttonContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+    }
+
+    .jsEnabled form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    .jsEnabled form p {
+        width: 100%;
+        max-width: 600px;
+        margin: .7em 0;
+    }
+
+    .jsEnabled .slider {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .jsEnabled .slides {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        width: 100%;
+    }
+
+    .jsEnabled fieldset {
+        padding: 3em;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100%;
+        scroll-snap-align: center;
+        background: #fff;
+        border-radius: 1.5em;
+    }
+
+    .jsEnabled input[type="radio"] {
+        position: absolute;
+        appearance: none;
+        -webkit-appearance: none;
+        height: 2.8em;
+        width: 3.2em;
+    }
+
+    .jsEnabled input[type="radio"]:focus {
+        outline: auto;
+        outline-offset: 7px;
+        outline-color: #FA8322;
+    }
+
+    .jsEnabled fieldset p {
+        margin: 0;
+        position: relative;
+    }
+
+    .jsEnabled fieldset label {
+        display: inline-block;
+        padding: 1em 1.5em;
+        border-radius: .5em;
+        border: 1px solid #185C90;
+        transition: box-shadow .3s ease, background .3s ease;
+    }
+
+    .jsEnabled fieldset label:hover {
+        box-shadow: 0 0 5px #185c90bf;
+        transition: box-shadow .3s ease;
+    }
+
+    .jsEnabled input[type="radio"]:checked + label { 
+        background: #185C90;
+        color: #fff;
+        transition: background .3s ease;
+    } 
+
+    .jsEnabled fieldset div {
+        display: flex;
+        gap: 1em;
+    }
+
+    .jsEnabled .slider nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+    }
+
+    .jsEnabled .slider nav a {
+        padding: .5em .8em;
+        background-color: #185C90;
+        margin: 0 10px 0 10px;
+        cursor: pointer;
+        transition: background .5s ease;
+    }
+
+    .jsEnabled .slider nav a:hover {
+        background: #0b3b5f;
+        transition: background .3s ease;
+    }
+
+    .jsEnabled .slider nav a.none {
+        pointer-events: none;
+        background: rgba(128, 128, 128, 0.272);
+        transition: background .5s ease;
+    }
+
+    .jsEnabled .slider nav a img {
+        height: 1.7em;
+    }
+    
 }
